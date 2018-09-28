@@ -1,0 +1,52 @@
+<view class='layout'>
+
+     <view class='content'>
+        <image  src='../../img/bg.jpg'></image> 
+     </view>
+     
+    <navigator class='header' url='/pages/detail/detail?jwd={{paramStr}}'>
+         <image  src='../../img/dw.png'></image>
+        <view class='info'>{{currentResult.cn}}</view>
+    </navigator>
+    
+    <view class='pm'>
+        <view>{{currentResult.pm}}</view> 
+        <view>{{currentResult.pm<=50?"优":""}}</view>
+        <view>{{currentResult.pm>50&&currentResult.pm<=100?"良":""}}</view>
+        <view>{{currentResult.pm>100&&currentResult.pm<=200?"轻度污染":""}}</view>
+        <view> {{currentResult.pm>200&&currentResult.pm<=300?"中度污染":""}}</view>
+        <view>{{currentResult.pm>300?"严重污染":""}}</view>  
+    </view>
+    <view class='pm25'></view>
+    <view class='sswd'>
+          {{currentResult.sswd}}
+    </view>
+    <view class='tp'>
+          {{currentResult.tp}}
+    </view>  
+    <view class='wd'>
+          {{currentResult.wd}}
+    </view>  
+    <view class='fl'>
+          {{currentResult.fl}}
+    </view>
+
+    <view class='weather_data'>
+         <view class='row' wx:for="{{result}}">
+            <view>{{item.date}}</view>  
+            <view>{{item.temperature}}</view>
+            <view>{{item.weather}}</view> 
+            <view> <image src='{{item.dayPictureUrl}}' ></image>  </view>
+            <!-- <view> <image src='{{item.nightPictureUrl}}' ></image>  </view> -->
+        </view>  
+    </view>
+    <view class='link'></view>
+   <view class='index'>
+       <view class='row'wx:for="{{index}}">
+            <view class='zs'>{{item.zs}}</view>  
+            <!-- <view>{{item.tipt}}</view> -->
+            <view class='title'>{{item.title}}</view> 
+       </view>
+   </view>
+   <view class='footer'>数据来源百度地图api</view>
+</view>

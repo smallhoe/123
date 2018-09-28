@@ -1,0 +1,27 @@
+<view class='wrapper'>
+      <view class='search'>
+        <input type='text' bindinput='search_input' placeholder='请输入您要查询的城市'/>
+         <navigator  url='/pages/index/index?jwd={{paramStr}}' >
+            <view>查询</view>
+        </navigator>  
+    </view>
+    <view class='dqdw'>当前定位</view>
+    <view class='dq' >
+        <navigator class='info' url='/pages/index/index?jwd={{paramStr}}' >
+            <view >{{currentResult.cn}}</view>
+        </navigator>  
+           
+    </view>
+    <view class='rmcs'>热门城市</view>
+    <view class='rm' >
+      <navigator class='info'  url='/pages/index/index?jwd={{bj}}' >
+            <view>北京市</view>
+       </navigator>      
+      <navigator class='info'  url='/pages/index/index?jwd={{sh}}' >
+           <view >上海市</view>
+      </navigator> 
+      <navigator class='info'  url='/pages/index/index?jwd={{gz}}' >
+           <view >广州市</view>
+      </navigator> 
+    </view>
+</view>
